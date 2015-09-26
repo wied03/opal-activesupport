@@ -13,8 +13,13 @@ Opal.append_path File.expand_path('../../../rails/activesupport/lib', __FILE__)
     'i18n',
     # unicode/incompatible regex
     'active_support/core_ext/string/output_safety',
-    'tempfile'
+    'tempfile',
+    'bigdecimal', # not in opal stdlib yet, GEMs use C extensions
+    'bigdecimal/util',
+    'tzinfo'
 ].each do |stub|
   Opal::Processor.stub_file stub
 end
 
+# TODO: Bundle if it changes a lot
+Opal.use_gem 'rubysl-rational'
