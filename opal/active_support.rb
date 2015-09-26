@@ -105,7 +105,8 @@ module ActiveSupport::Callbacks::ClassMethods
 
       module_eval do
         define_method "_run_#{name}_callbacks" do |&block|
-          __run_callbacks__("_#{name}_callbacks", &block)
+          callbacks = self.send "_#{name}_callbacks"
+          __run_callbacks__(callbacks, &block)
         end
       end
     end
