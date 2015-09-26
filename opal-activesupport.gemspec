@@ -22,5 +22,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_dependency 'opal', ['>= 0.8.0.rc1', '< 0.9']
+  gem.add_dependency 'opal-minitest', '~> 0.0'
   gem.add_development_dependency 'rake'
 end
