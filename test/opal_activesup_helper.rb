@@ -3,3 +3,4 @@ def gem(*args)
 end
 
 require 'active_support/test_case'
+ActiveSupport::TestCase.test_order = :sorted

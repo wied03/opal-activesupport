@@ -22,7 +22,9 @@ Opal.append_path File.expand_path('../../../rails/activesupport/lib', __FILE__)
     # see above
     'active_support/notifications',
     # no i18n stdlib
-    'active_support/i18n'
+    'active_support/i18n',
+    # Uses kernel.caller and backtrace line #, etc.
+    'active_support/deprecation'
 ].each do |stub|
   Opal::Processor.stub_file stub
 end
