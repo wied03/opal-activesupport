@@ -6,7 +6,12 @@ task :default do
   require 'opal/minitest'
   test_paths = %w(rails/activesupport/test test)
   paths = Opal.paths + test_paths
-  test_stubs = %w{abstract_unit}
+  test_stubs = [
+      # Threads/file I/O
+      'abstract_unit',
+      # File I/O
+      'active_support/testing/isolation'
+  ]
   stubs = Opal::Processor.stubbed_files + test_stubs
   flat_paths = paths.map {|p| "-I#{p}"}.join ' '
   flat_stubs = stubs.map {|s| "-s#{s}"}.join ' '

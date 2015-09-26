@@ -12,7 +12,8 @@ Opal.append_path File.expand_path('../../../rails/activesupport/lib', __FILE__)
     'logger',
     'i18n',
     # unicode/incompatible regex
-    'active_support/core_ext/string/output_safety'
+    'active_support/core_ext/string/output_safety',
+    'tempfile'
 ].each do |stub|
   Opal::Processor.stub_file stub
 end
