@@ -16,7 +16,13 @@ Opal.append_path File.expand_path('../../../rails/activesupport/lib', __FILE__)
     'tempfile',
     'bigdecimal', # not in opal stdlib yet, GEMs use C extensions
     'bigdecimal/util',
-    'tzinfo'
+    'tzinfo',
+    # Uses mutex
+    'active_support/notifications/fanout',
+    # see above
+    'active_support/notifications',
+    # no i18n stdlib
+    'active_support/i18n'
 ].each do |stub|
   Opal::Processor.stub_file stub
 end
