@@ -207,3 +207,5 @@ class ActiveSupport::NumberHelper::NumberToPhoneConverter
     start_with_delimiter?(number) ? subbed.slice(0, 1) : subbed
   end
 end
+
+require 'active_support/number_helper/number_to_currency_converter'
